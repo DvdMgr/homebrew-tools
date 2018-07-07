@@ -17,7 +17,7 @@ class Htcondor < Formula
 
     def install
         localdir.mkpath
-        system "./condor_install", "--prefix=#{prefix}", "--make-personal-condor", "--local-dir=#{localdir}"
+        system "./condor_install", "--prefix=#{prefix}", "--make-personal-condor", "--local-dir=#{localdir}", "--type=execute,submit"
         (localdir/"config").mkpath
         man1.install Dir["man/man1/*"]
     end
